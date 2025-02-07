@@ -95,27 +95,6 @@ def detect_communities(G):
     
     return list(communities.values()), hub_nodes
 
-
-# ##################################################
-# # 5-2. 커뮤니티 정보를 df에 추가
-# ##################################################
-# def add_community_to_df(df, G):
-#     """
-#     방향성 네트워크 G에서 커뮤니티를 탐지한 후,
-#     각 account_id가 속한 커뮤니티 정보를 df['community']에 추가
-#     """
-#     communities, _ = detect_communities(G)  # 커뮤니티 탐지
-
-#     # 노드별 커뮤니티 매핑
-#     node_community_map = {}
-#     for comm_id, nodes in enumerate(communities):
-#         for node in nodes:
-#             node_community_map[node] = comm_id  # 각 노드가 속한 커뮤니티 ID
-
-#     # df['community']에 매핑
-#     df['community'] = df['account_id'].astype(str).map(node_community_map).fillna(-1).astype(int)
-
-#     return df
     
 ##################################################
 # 5-2. 그래프 정보 (커뮤니티, PageRank, 허브 여부, Degree) 추가
